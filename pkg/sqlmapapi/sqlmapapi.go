@@ -19,5 +19,5 @@ func Server(cmd string, opts ...option) (context.CancelFunc, error) {
 	ctx, cancel := context.WithCancel(context.Background())
 	srv := exec.CommandContext(ctx, cmd, args...)
 
-	return cancel, srv.Run()
+	return cancel, srv.Start()
 }
